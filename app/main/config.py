@@ -30,7 +30,7 @@ configurations = dict(
 )
 
 paths = dict(
-    tokenizer='assets/tokenizer.pkl'
+    tokenizer=basedir + '/assets/tokenizer.pkl'
 )
 
 endpoints = dict(
