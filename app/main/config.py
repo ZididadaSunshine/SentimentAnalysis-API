@@ -29,4 +29,12 @@ configurations = dict(
     prod=ProductionConfig
 )
 
+paths = dict(
+    tokenizer='assets/tokenizer.pkl'
+)
+
+endpoints = dict(
+    serving='url'
+)
+
 secret = Config.SECRET_KEY
