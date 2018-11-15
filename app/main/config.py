@@ -29,12 +29,8 @@ configurations = dict(
     prod=ProductionConfig
 )
 
-paths = dict(
-    tokenizer=basedir + '/assets/tokenizer.pkl'
-)
 
-endpoints = dict(
-    serving='url'
-)
+tokenizer_path = os.environ.get('TOKENIZER_PATH')
+serving_url = os.environ.get('SERVING_URL')
 
 secret = Config.SECRET_KEY
