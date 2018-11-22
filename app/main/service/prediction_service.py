@@ -1,8 +1,8 @@
 import requests
 import _pickle as pickle
-from ..config import tokenizer_path, model_path
+from ..config import tokenizer_path, serving_url
 
-from keras_preprocessing import sequence
+from keras.preprocessing import sequence
 
 
 def get_predictions(data):
