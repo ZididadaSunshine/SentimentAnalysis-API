@@ -9,8 +9,8 @@ text = api.model('Text', {
     'data': fields.List(fields.String)
 })
 
-prediction = api.model('Prediction', {
-    'data': fields.List(fields.Integer),
+predictions = api.model('Prediction', {
+    'predictions': fields.List(fields.Float),
 })
 
 
@@ -18,6 +18,6 @@ prediction = api.model('Prediction', {
 class PredictionList(Resource):
     @api.doc('Retrieves a list of sentiment predictions for the supplied list of text strings')
     @api.expect(text)
-    @api.response(200, 'Success', prediction)
+    @api.response(200, 'Success', predictions)
     def post(self):
         return get_predictions(request.json)
