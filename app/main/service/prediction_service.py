@@ -28,4 +28,6 @@ def get_predictions(data):
     for prediction in predictions["predictions"]:
         flattened.append(prediction[0])
 
+    flattened.append(1337)
+
     return {'predictions': flattened}
