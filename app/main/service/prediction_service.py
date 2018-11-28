@@ -23,4 +23,9 @@ def get_predictions(data):
 
     print(payload)
 
-    return requests.post(f"http://{serving_url}/v1/models/senticloud:predict", json=payload).json()
+    predictions = requests.post(f"http://{serving_url}/v1/models/senticloud:predict", json=payload).json()
+    flattened = []
+    for prediction in predictions["predictions"]:
+        flattened.append(prediction[0])
+
+    return {'predictions': flattened}
