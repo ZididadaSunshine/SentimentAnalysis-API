@@ -21,8 +21,6 @@ def get_predictions(data):
         "instances": instances
     }
 
-    print(payload)
-
     predictions = requests.post(f"http://{serving_url}/v1/models/senticloud:predict", json=payload).json()
     flattened = [p[0] for p in predictions["predictions"]]
 
